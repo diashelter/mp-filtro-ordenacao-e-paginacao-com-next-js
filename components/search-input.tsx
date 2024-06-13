@@ -16,7 +16,6 @@ export default function SearchInput() {
 
     if (searchString) {
       params.set("search", searchString);
-      
     } else {
       params.delete("search");
     }
