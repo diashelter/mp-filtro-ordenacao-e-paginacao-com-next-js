@@ -16,6 +16,7 @@ type ISearchParams = {
   searchParams?: {
     search?: string;
     status?: string;
+    sort?: string;
   };
 };
 
@@ -23,11 +24,13 @@ export default async function Component({ searchParams }: ISearchParams) {
   const urlBase = "https://apis.codante.io/api/orders-api/orders";
   const searchString = searchParams?.search;
   const statuString = searchParams?.status;
+  const sortString = searchParams?.sort;
 
   const response = await axios.get(urlBase, {
     params: {
       search: searchString,
       status: statuString,
+      sort: sortString,
     },
   });
 
